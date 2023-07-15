@@ -1,5 +1,6 @@
 package com.example.kotlin_android_concepts
 
+import com.example.dagger2learning.MainActivity
 import dagger.Component
 
 //whatever object we require we mention it here,if dager able to create return the obkject or
@@ -9,5 +10,6 @@ import dagger.Component
 @Component
 interface UserRegistrationComponent {
 
-    fun getUserRegistrationService(): UserRegistrationService
+//    fun getUserRegistrationService(): UserRegistrationService
+    fun inject(mainActivity: MainActivity)
 }
