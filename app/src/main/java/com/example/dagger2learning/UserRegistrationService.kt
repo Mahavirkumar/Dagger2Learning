@@ -5,12 +5,12 @@ import javax.inject.Inject
 class UserRegistrationService @Inject constructor
     (
     private val userRepository: UserRepository,
-    private val emailService: EmailService
+    private val notificationService: NotificationService
 ) {
 
     fun registerUser(email: String, password: String) {
         userRepository.saveUser(email, password)
-        emailService.send(email, "no-reply@mk.com", "User Registerd")
+        notificationService.send(email, "no-reply@mk.com", "User Registerd")
     }
 }
 /*
