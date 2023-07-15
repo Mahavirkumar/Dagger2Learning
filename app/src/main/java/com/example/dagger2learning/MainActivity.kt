@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
 //        DaggerUserRegistrationComponent-> no need to create by ourself after build dager create this for us
 //
 //                val userRegistrationService= UserRegistrationService(userRepository,emailService)
-        val component = DaggerUserRegistrationComponent.builder().build()
+        val component = DaggerUserRegistrationComponent.factory().create(3)
         component.inject(this)
         userRegistrationService.registerUser("mk@gmail.com", "111")
     }
